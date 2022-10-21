@@ -15,8 +15,7 @@ const Product = (props) => {
                 <Link to={"/" + key}>{name}</Link>
                 <br/>
                 <p>By: {seller}</p>
-                <p>Price${price}</p>
-                
+                <p>Price${price}</p>                
                 <p>Only {stock} left in stock order soon</p>
                 <button className="main-button" 
                 onClick={() => props.handleAddProduct(props.product)}>

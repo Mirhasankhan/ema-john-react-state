@@ -7,8 +7,7 @@ import { addToDb } from '../../utilities/fakedb';
 import { Link } from 'react-router-dom';
 
 
-const Shop = () => {
-   
+const Shop = () => {   
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([])
 

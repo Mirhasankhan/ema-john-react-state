@@ -4,16 +4,16 @@ import fakeData from '../../fakeData/products.JSON'
 import RevieItem from '../ReviewItem/RevieItem';
 import Cart from '../Cart/Cart';
 import happyImage from '../../images/giphy.gif'
+import { useNavigate } from 'react-router-dom';
 
 const Review = () => {
     const [cart, setCart] = useState([])
     const [ids, setIds] = useState([])
     const [orderPlaced, setOrderplaced] = useState(false)
+    const navigate = useNavigate()
 
 const handlePlaceOrder = () => {
-    setCart([])
-    setOrderplaced(true)
-    clearTheCart()
+    navigate('/shipment')
 }
 
     const removeProduct = (productKey) => {
@@ -27,6 +27,7 @@ const handlePlaceOrder = () => {
         .then(res => res.json())
         .then(data => setCart(data))
     }, []);
+    
     useEffect(() => {
         const savedCart = getStoredCart();
         
@@ -72,7 +73,7 @@ const handlePlaceOrder = () => {
          <div className="cart-container">
             <Cart cart={cart}>
                 <button className="main-button" onClick={handlePlaceOrder}
-                >Place Order</button>
+                >Order Proceed</button>
             </Cart>
          </div>
          
